@@ -1,6 +1,6 @@
 TOOL_NAME = XcodeGen
 export EXECUTABLE_NAME = xcodegen
-VERSION = 2.33.0
+VERSION = 2.33.1
 
 PREFIX = /usr/local
 INSTALL_PATH = $(PREFIX)/bin/$(EXECUTABLE_NAME)
@@ -33,7 +33,7 @@ format_code:
 
 release:
 	sed -i '' 's|\(let version = Version("\)\(.*\)\(")\)|\1$(VERSION)\3|' Sources/XcodeGen/main.swift
-	sed -i '' 's|\(.package(url: "https://github.com/yonaskolb/XcodeGen.git", from: "\)\(.*\)\(")\)|\1$(VERSION)\3|' README.md
+	sed -i '' 's|\(.package(url: "https://github.com/Iron-Ham/XcodeGen.git", from: "\)\(.*\)\(")\)|\1$(VERSION)\3|' README.md
 
 	git add .
 	git commit -m "Update to $(VERSION)"
